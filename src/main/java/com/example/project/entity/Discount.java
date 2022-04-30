@@ -1,5 +1,7 @@
 package com.example.project.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.Set;
 
@@ -20,13 +22,18 @@ public class Discount {
     @Column(name = "end_date")
     private String endDate;
 
-    @Column(name = "active")
-    private boolean active;
-
     @OneToMany(mappedBy = "discount")
     private Set<Product> products;
 
     public Discount() {
+    }
+
+    public Discount(Long id, String name, String startDate, String endDate, Set<Product> products) {
+        this.id = id;
+        this.name = name;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.products = products;
     }
 
     public Long getId() {
@@ -61,14 +68,6 @@ public class Discount {
         this.endDate = endDate;
     }
 
-    public boolean isActive() {
-        return active;
-    }
-
-    public void setActive(boolean active) {
-        this.active = active;
-    }
-
     public Set<Product> getProducts() {
         return products;
     }
@@ -84,7 +83,6 @@ public class Discount {
                 ", name='" + name + '\'' +
                 ", startDate='" + startDate + '\'' +
                 ", endDate='" + endDate + '\'' +
-                ", active=" + active +
                 '}';
     }
 }

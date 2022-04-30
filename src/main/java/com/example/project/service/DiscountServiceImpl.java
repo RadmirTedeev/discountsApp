@@ -39,6 +39,13 @@ public class DiscountServiceImpl implements DiscountService{
 
     @Override
     @Transactional
+    public Discount saveAndReturnDiscounts (Discount discount) {
+        discountRepository.save(discount);
+        return discount;
+    }
+
+    @Override
+    @Transactional
     public void deleteDiscount(Long id) {
         Discount discount = getDiscountById(id);
         for (Product p : discount.getProducts()) {

@@ -12,5 +12,7 @@ public interface DiscountService {
 
     void saveDiscount (Discount discount);
 
+    Discount saveAndReturnDiscounts (Discount discount);
+
     void deleteDiscount(Long id);
 }

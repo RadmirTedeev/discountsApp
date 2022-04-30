@@ -1,5 +1,7 @@
 package com.example.project.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 
 @Entity
@@ -20,6 +22,7 @@ public class Product {
     private String image;
 
     @ManyToOne
+    @JsonIgnore
     @JoinColumn(name = "discount")
     private Discount discount;
 

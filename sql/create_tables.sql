@@ -6,7 +6,6 @@ create table discounts (
     name varchar(255) not null,
     start_date varchar(15) not null,
     end_date varchar(15) not null,
-    active boolean not null,
     constraint discounts_pk primary key (id)
 );
 
@@ -20,10 +19,10 @@ create table products (
     constraint products_fk_1 foreign key (discount) references discounts (id)
 );
 
-insert into discounts (name, start_date, end_date, active)
+insert into discounts (name, start_date, end_date)
 values
-    ('Бонусная неделя апреля', '25.04.2022', '01.05.2022', true),
-    ('Бонусная неделя мая', '02.05.2022', '08.05.2022', true);
+    ('Бонусная неделя апреля', '25.04.2022', '01.05.2022'),
+    ('Бонусная неделя мая', '02.05.2022', '08.05.2022');
 
 insert into products (name, price, image, discount)
 values

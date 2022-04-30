@@ -1,8 +1,8 @@
-package com.example.project.config;
+//package com.example.project.config;
 
-import org.springframework.security.web.context.AbstractSecurityWebApplicationInitializer;
-import org.springframework.stereotype.Component;
+//import org.springframework.security.web.context.AbstractSecurityWebApplicationInitializer;
+//import org.springframework.stereotype.Component;
 
-@Component
-public class SecurityWebApplicationInitializer extends AbstractSecurityWebApplicationInitializer {
-}
+//@Component
+//public class SecurityWebApplicationInitializer extends AbstractSecurityWebApplicationInitializer {
+//}
